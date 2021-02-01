@@ -1,0 +1,28 @@
+<template>
+	<view >
+		<view class="position-relative">
+			<image :src="info.cover" style="height: 300rpx;" class="w-100 filter"></image>
+		</view>
+		<view class="position-relative bg-white px-2 pb-2" style="z-index: 10;">
+			<view class="flex">
+				<image :src="info.cover" style="width: 150rpx; height: 150rpx; margin-top: -75rpx;" class="rounded mr-2"></image>
+				<text>#{{info.title}}#</text>
+			</view>
+			<view class="flex align-center font text-secondry mt-1">
+				<text class="mr-2">动态：{{info.news_count}}</text>
+				<text>今日：{{info.today_count}}</text>
+			</view>
+			<view class="font-md text-secondry">{{info.desc}}</view>
+		</view>
+	</view>
+</template>
+
+<script>
+	export default {
+		props: ['info']
+	}
+</script>
+
+<style>
+</style>
+
