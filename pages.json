@@ -51,8 +51,8 @@
 								"float": "left",
 								"fontSize": "20px",
 								"fontSrc": "/static/iconfont.ttf",
-								// "text": "\ue60d"
-								"text": "\ue668"
+								"text": "\ue60d"
+								// "text": "\ue668"
 							},
 							{
 								"color": "#333333",
@@ -60,8 +60,8 @@
 								"float": "right",
 								"fontSize": "20px",
 								"fontSrc": "/static/iconfont.ttf",
-								// "text": "\ue652"
-								"text": "\ue668"
+								"text": "\ue652"
+								// "text": "\ue668"
 							}
 						]
 					}
@@ -259,8 +259,39 @@
 
 		}
 
+		, {
+			"path": "components/user-chat/user-chat-list/user-chat-list",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/detail/detail",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"type": "menu",
+							"float": "right"
+						}]
+					}
+				}
+			}
+		}
 	    ,{
-            "path" : "components/user-chat/user-chat-list/user-chat-list",
+            "path" : "components/common/bottom-input/bottom-input",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "components/common/more-share/more-share",
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "",

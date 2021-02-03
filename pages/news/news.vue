@@ -27,9 +27,9 @@
 					<hot-cate :hotCate="hotCate"></hot-cate>
 					<!-- 搜索框 -->
 					<view class="p-2">
-						<view class="bg-light rounded flex align-center justify-center py-2 text-secondry">
-							<text class="iconfont icon-sousuo mr-2"></text>搜索话题
-						</view>
+					    <view class="bg-light rounded flex align-center justify-center py-2 text-secondry" @click="openSearch()">
+					        <text class="iconfont icon-sousuo mr-2"></text>搜索话题
+					    </view>
 					</view>
 					<!-- 轮播图 -->
 					<swiper class="px-2 pb-2" :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000">
@@ -286,6 +286,11 @@
 					// 设置加载状态
 					this.loadmore = '上拉加载更多';
 				}, 2000)
+			},
+			openSearch() {
+			    uni.navigateTo({
+			        url: '../search/search?type=topic'
+			    });
 			}
 		}
 	}

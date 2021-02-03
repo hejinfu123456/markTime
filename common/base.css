@@ -175,13 +175,21 @@
 	font-weight: bold;
 }
 
-/* 文字颜色 */
+/* 文字 */
 .text-white {
 	color: #FFFFFF;
 }
 
 .text-light-muted {
 	color: #A9A5A0;
+}
+
+.text-muted {
+	color: #B2B2B2;
+}
+
+.text-center {
+	text-align: center;
 }
 
 /* 文字换行溢出处理 */
@@ -221,7 +229,9 @@
 .bg-light {
 	background-color: #F8F9FA;
 }
-
+.bg-weixin{
+	background-color: #98E165;
+}
 .bg-secondary {
 	background-color: #AAA8AB;
 }
@@ -232,6 +242,22 @@
 
 .bg-dark {
 	background-color: #333333;
+}
+
+.bg-green {
+	background-color: #1EBE9A;
+}
+
+.bg-brown {
+	background-color: #4E4E4E;
+}
+
+.bg-red {
+	background-color: #FB6B5A;
+}
+
+.bg-blue {
+	background-color: #4C82D1;
 }
 
 /* 定位 */

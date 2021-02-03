@@ -22,38 +22,38 @@
 </template>
 <script>
 	const test_data = [{
-			avatar: '/static/img/userpic/7.jpg',
+			avatar: '/static/img/userpic/16.jpg',
 			username: 'Corley',
 			update_time: 1612075613,
-			data: '我再看看吧，谢谢大佬',
+			data: '我前几天问了没回我',
 			noread: 5
 		},
 		{
-			avatar: '/static/img/userpic/12.jpg',
+			avatar: '/static/img/userpic/7.jpg',
 			username: 'Brynn',
 			update_time: 1612075606,
-			data: '大佬，你好，我想请教一个关于uni-app的问题，不知道是否方便？',
+			data: '今天天气真不错',
 			noread: 0
 		},
 		{
-			avatar: '/static/img/userpic/16.jpg',
+			avatar: '/static/img/userpic/20.jpg',
 			username: 'Ellie',
 			update_time: 1612075255,
 			data: '那我也有点懵了',
 			noread: 3
 		},
 		{
-			avatar: '/static/img/userpic/20.jpg',
+			avatar: '/static/img/userpic/12.jpg',
 			username: 'Ainsley',
 			update_time: 1612075983,
-			data: '真机调试不太方便，我就用浏览器和微信开发者工具调试的。',
+			data: '我就用浏览器和微信开发者工具调试的。',
 			noread: 1
 		},
 		{
-			avatar: '/static/img/userpic/7.jpg',
+			avatar: '/static/img/userpic/16.jpg',
 			username: 'Bella',
 			update_time: 1612074571,
-			data: 'mysql16进制数据怎么查询才快呢？',
+			data: '要不你也试试',
 			noread: 2
 		}
 	];
@@ -71,50 +71,59 @@
 			noThing,
 			uniPopup
 		},
+		// 页面加载
+		onLoad() {
+			this.list = test_data;
+		},
 		// 监听下拉刷新
 		onPullDownRefresh() {
 			this.refresh();
 		},
 		// 监听原生导航栏按钮事件
 		onNavigationBarButtonTap(e) {
-			console.log(e);
-			switch (e.index){
-				case 0: // 左边
-				uni.navigateTo({
-					url: '../user-list/user-list',
-				});
-				//关闭弹出层
-				this.$refs.popup.close();
-					break;
-				case 1: // 右边
-					this.$refs.popup.open();
-					break;
-				default:
-					break;
-			}
+		    console.log(e);
+		    switch (e.index) {
+		        case 0: // 左边
+		        uni.navigateTo({
+		            url: '../user-list/user-list',
+		        });
+		            // 关闭弹出层
+		            this.$refs.popup.close();
+		            break;
+		        case 1: // 右边
+		            this.$refs.popup.open();
+		            break;
+		        default:
+		            break;
+		    }
 		},
+
 		methods: {
+			// 下拉刷新
 			refresh() {
-				setTimeout(()=>{
+				setTimeout(() => {
 					this.list = test_data;
 					// 停止下拉刷新
 					uni.stopPullDownRefresh();
-				}, 1000)
+				}, 2000)
 			},
 			// 弹出层选项点击事件
 			popupEvent(e) {
-				switch (e) {
-					case 'friend':
-						console.log('Adding friend');
-						break;
-					case 'clear':
-						console.log('Clearing list');
-						break;
-					default:
-						break;
-				}
-				// 关闭弹出层
-				this.$refs.popup.close();
+			    switch (e) {
+			        case 'friend':
+			            console.log('Adding friend');
+			            uni.navigateTo({
+			                url: '../search/search?type=user'
+			            });
+			            break;
+			        case 'clear':
+			            console.log('Clearing list');
+			            break;
+			        default:
+			            break;
+			    }
+			    // 关闭弹出层
+			    this.$refs.popup.close();
 			}
 		}
 	}

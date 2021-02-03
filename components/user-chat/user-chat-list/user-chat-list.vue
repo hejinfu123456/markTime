@@ -10,7 +10,7 @@
 		<!-- 消息气泡 -->
 		<view class="flex align-start px-2 my-2" :style="isSelf ? 'flex-direction: row-reverse;' : ''">
 			<image :src="item.avatar" class="rounded-circle" style="width: 100rpx; height: 100rpx;"></image>
-			<view class="bg-light p-2 rounded mx-2" style="min-width: 100rpx; max-width: 400rpx;">
+			<view class="bg-weixin p-2 rounded mx-2" style="min-width: 100rpx; max-width: 400rpx;">
 				{{item.data}}
 			</view>
 		</view>

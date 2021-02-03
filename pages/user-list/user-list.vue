@@ -34,7 +34,7 @@
 
 <script>
 	const test_data1 = {
-			avatar: '/static/img/userpic/16.jpg',
+			avatar: '/static/img/userpic/12.jpg',
 			username: 'Corley',
 			sex: 1, // 0未知、1女性、2男性
 			age: 23,
@@ -48,7 +48,7 @@
 			isFollow: false
 	}
 	const test_data3 = {
-			avatar: '/static/img/userpic/20.jpg',
+			avatar: '/static/img/userpic/16.jpg',
 			username: 'Henry',
 			sex: 2, // 0未知、1女性、2男性
 			age: 18,
@@ -153,7 +153,7 @@
 					arr.push(obj);
 				}
 				this.userList = arr;
-				//console.log(this.userList);
+				console.log(this.userList);
 			}
 		}
 	}

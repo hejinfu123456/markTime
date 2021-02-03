@@ -33,12 +33,13 @@
 </template>
 
 <script>
+	// 测试数据
 	const test_data = [{
 			username: "Corley",
 			userpic: "/static/img/userpic/12.jpg",
 			newstime: "2021-01-24 上午11:30",
 			isFollow: false,
-			title: "在路上，遇见最美的秋天",
+			title: "关于喀纳斯",
 			titlepic: "/static/img/datapic/12.jpg",
 			support: {
 				type: "support", // 顶
@@ -46,7 +47,15 @@
 				unsupport_count: 2
 			},
 			comment_count: 2,
-			share_count: 2
+			share_count: 2,
+			content: '“喀纳斯”是蒙古语，意为“美丽而神秘的湖”。喀纳斯湖位于新疆维吾尔自治区阿勒泰地区布尔津县北部，湖水来自奎屯、友谊峰等山的冰川融水和当地降水，湖面海拔1374米，面积45.73㎞²，湖泊最深处高程1181.5米，湖深188.5米，蓄水量达53.8亿立方米，是中国最深的冰碛堰塞湖，是一个坐落在阿尔泰深山密林中的高山湖泊、内陆淡水湖。喀纳斯湖景区由高山、河流、森林、湖泊、草原等奇异的自然景观、成吉思汗西征军点将台、古代岩画等历史文化遗迹与蒙古族图瓦人独特的民俗风情于一体，有驼颈湾、变色湖、卧龙湾、观鱼台等主要景点，具有极高的旅游观光、自然保护、科学考察和历史文化价值。',
+			images: [{
+					url: 'http://p3.music.126.net/zmmDgQyeMa94xZEGQvhksA==/109951165094046496.jpg?param=400y400'
+				},
+				{
+					url: 'http://p4.music.126.net/nI-a9J3lU6xaqtKsMT5itA==/109951165462021126.jpg?param=400y400'
+				}
+			]
 		},
 		{
 			username: "Brittany",
@@ -67,7 +76,7 @@
 			userpic: "/static/img/userpic/7.jpg",
 			newstime: "2021-01-24 下午14:44",
 			isFollow: true,
-			title: "来一次与新疆的邂逅",
+			title: "Django+Vue开发生鲜电商平台",
 			titlepic: "/static/img/datapic/20.jpg",
 			support: {
 				type: "", // 未操作
@@ -82,7 +91,7 @@
 			userpic: "/static/img/userpic/20.jpg",
 			newstime: "2021-01-24 下午18:20",
 			isFollow: true,
-			title: "九寨沟，一个秋天的童话",
+			title: "uni-app实战之社区交友APP",
 			titlepic: "/static/img/datapic/30.jpg",
 			support: {
 				type: "support",
@@ -93,6 +102,8 @@
 			share_count: 0
 		}
 	];
+
+
 	import commonList from '@/components/common/common-list/common-list.vue';
 	import loadMore from '@/components/common/load-more/load-more.vue';
 	export default {
@@ -190,6 +201,7 @@
 					return;
 				}
 				this.tabIndex = index;
+				this.list = this.newsList[this.tabIndex].list;
 				// 滚动到指定元素
 				this.scrollInto = 'tab' + index;
 			},
@@ -214,6 +226,7 @@
 					arr.push(obj)
 				}
 				this.newsList = arr;
+				this.list = this.newsList[this.tabIndex].list;
 			},
 			// 上拉加载更多
 			loadMore(index) {
@@ -234,15 +247,15 @@
 		},
 		// 监听导航栏搜索框
 		onNavigationBarSearchInputClicked() {
-		    uni.navigateTo({
-		        url: '../search/search'
-		    })
+			uni.navigateTo({
+				url: '../search/search?type=post'
+			})
 		},
 		// 监听导航按钮点击事件
 		onNavigationBarButtonTap() {
-		    uni.navigateTo({
-		        url: '../add-input/add-input'
-		    })
+			uni.navigateTo({
+				url: '../add-input/add-input'
+			})
 		},
 	}
 </script>
@@ -250,4 +263,3 @@
 <style>
 
 </style>
-

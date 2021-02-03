@@ -23,4 +23,8 @@
 	@import url("./common/base.css");
 	/* 全局样式 */
 	@import url("./common/common.css");
+	*{
+		font-family:"Times New Roman",Times,serif;
+		/* 2021020203002411 */
+	}
 </style>

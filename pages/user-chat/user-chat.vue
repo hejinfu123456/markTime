@@ -9,15 +9,13 @@
 			</block>
 		</scroll-view>
 		<!-- 底部操作条 -->
-		<view style="height: 100rpx;" class="fixed-bottom flex align-center border-top bg-white">
-			<input type="text" v-model="content" value="" class="flex-1 rounded bg-light ml-2" style="padding: 5rpx 0;" placeholder="文明发言" @confirm="submit()" />
-			<view class="iconfont icon-fasong flex align-center justify-center font-lg animate__animated" hover-class="animate__jello text-main" style="width: 100rpx;" @click="submit()"></view>
-		</view>
+		<bottom-input @submit="submit"></bottom-input>
 	</view>
 </template>
 
 <script>
 	import userChatList from '@/components/user-chat/user-chat-list/user-chat-list.vue';
+	import bottomInput from '@/components/common/bottom-input/bottom-input.vue';
 	export default {
 		data() {
 			return {
@@ -103,48 +101,37 @@
 						create_time: 1612157821
 					}
 				],
-				content: '',
-				scrollInto: ''
+				scrollInto: '',
+				username: ''
 			}
 		},
 		components: {
-			userChatList
+			userChatList,
+			bottomInput
+		},
+		onLoad(e) {
+			console.log(e);
+			this.username = e.username;
 		},
 		// 页面加载完成
 		onReady() {
 			this.pageToBottom();
-		},
-		onLoad(e) {
-		    console.log(e);
-		    this.username = e.username;
-		},
-		// 页面加载完成
-		onReady() {
-		    this.pageToBottom();
-		    uni.setNavigationBarTitle({
-		        title: this.username
-		    });
+			uni.setNavigationBarTitle({
+			    title: this.username
+			});
 		},
 		methods: {
 			// 发送消息
-			submit() {
-				if (this.content === ''){
-					return uni.showToast({
-						title: '消息不能为空',
-						icon: 'none'
-					});
-				}
+			submit(data) {
 				let obj = {
 					user_id: 1,
 					username: 'Corley',
 					avatar: '/static/img/userpic/11.jpg',
-					data: this.content,
+					data: data,
 					type: 'text',
 					create_time: (new Date()).getTime()
 				}
 				this.list.push(obj);
-				// 清空输入框
-				this.content = '';
 				// 滚动到底部
 				this.pageToBottom();
 			},
