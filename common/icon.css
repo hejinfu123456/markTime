@@ -113,4 +113,6 @@
 .icon-shouye:before {
   content: "\e681";
 }
-
+.icon-compose:before {
+  content:"\ue400";
+}

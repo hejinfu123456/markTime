@@ -1,7 +1,11 @@
 /* 本项目全局样式 */
 /* 背景 */
 .bg-main {
-	background-color: #FF4A6A;
+	background-color: #FF4A6A!important;
+}
+
+.bg-main-disabled {
+	background-color: #F87F97!important;
 }
 
 /* 文本颜色 */
@@ -17,9 +21,14 @@
 	color: #333333;
 }
 
+.text-primary {
+	color: #3EA0C3;
+}
+
 /* 下拉弹出框样式 */
 .popup-content {
 	background-color: #fff;
 	padding: 7px;
 }
+
 

@@ -2,6 +2,10 @@
 	export default {
 		onLaunch: function() {
 			console.log('App Launch')
+			// 网络监听
+			this.$U.onNetwork();
+			// 检测更新
+			this.$U.update();
 		},
 		onShow: function() {
 			console.log('App Show')

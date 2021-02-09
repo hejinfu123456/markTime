@@ -227,6 +227,7 @@
 				}
 				this.newsList = arr;
 				this.list = this.newsList[this.tabIndex].list;
+				console.log(this.list);
 			},
 			// 上拉加载更多
 			loadMore(index) {

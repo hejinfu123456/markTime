@@ -67,14 +67,19 @@
 					}
 				}
 			}
-
 		}, {
 			"path": "pages/my/my",
 			"style": {
-				"navigationBarTitleText": "",
-				"enablePullDownRefresh": false
+				"navigationBarTitleText": "我的",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"type": "menu"
+						}]
+					}
+				}
 			}
-
 		}, {
 			"path": "components/common/common-list/common-list",
 			"style": {
@@ -280,9 +285,86 @@
 					}
 				}
 			}
+		}, {
+			"path": "components/common/bottom-input/bottom-input",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "components/common/more-share/more-share",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/user-set/user-set",
+			"style": {
+				"navigationBarTitleText": "设置",
+				"enablePullDownRefresh": false
+			}
 		}
 	    ,{
-            "path" : "components/common/bottom-input/bottom-input",
+            "path" : "pages/user-password/user-password",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "修改密码",
+				"enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/user-email/user-email",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "修改邮箱",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/user-userinfo/user-userinfo",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "修改资料",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/user-feedback/user-feedback",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "意见反馈",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/about/about",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "关于社区",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/login/login",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"titleNView": false
+				}
+            }
+            
+        }
+        ,{
+            "path" : "components/common/other-login/other-login",
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "",
@@ -291,11 +373,20 @@
             
         }
         ,{
-            "path" : "components/common/more-share/more-share",
+            "path" : "pages/user-space/user-space",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
+                "navigationBarTitleText": "个人空间",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"titleNView": {
+						"buttons":[
+							{
+								"type":"menu"
+							}
+						]
+					}
+				}
             }
             
         }

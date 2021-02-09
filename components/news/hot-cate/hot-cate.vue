@@ -6,7 +6,7 @@
 				更多<text class="iconfont icon-bangzhujinru"></text>
 			</view>
 		</view>
-		<view class="flex align-center px-2 py-3 border-bottom">
+		<view class="flex align-center py-3 border-bottom">
 			<view class="border rounded bg-light mx-1 px-2 animate__animated" hover-class="animate__jello" v-for="(item, index) in hotCate" :key="index" @click="openDetail(item)">
 				{{item.name}}
 			</view>
